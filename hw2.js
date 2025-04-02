@@ -65,7 +65,7 @@ function validateAddress1() {
 } else {
     document.getElementById("address1-error").innerHTML= "";
     return true;
-}
+}}
 //zip code validation
 function validateZcode() {
   const zipInput = document.getElementById("zcode");
@@ -88,6 +88,7 @@ function validateZcode() {
   return true;
 }
 //email validation
+function validateEmail (){
 var email=document.getElementById("email").value;
 var emailerror= document.getElementById("email-error");
 var emailR = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
