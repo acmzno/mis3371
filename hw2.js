@@ -110,6 +110,11 @@ function validatePhone() {
 } else if (!phoneR.test(phone)) {
     error.innerHTML = "Enter a valid phone number in the format 000-000-0000.";
     return false;
+   } else {
+    error.innerHTML = "";
+    return true;
+  }
+}
   //formats phone if it is not in correct format
   function formatPhone() {
     let phone = document.getElementById("phone").value.replace(/\D/g, "");
@@ -154,8 +159,8 @@ function validateUid() {
 }
 //validate password
 function validatePassword() {
-  const pword = document.getElementById("password").value;
-  const uid = document.getElementById("userid").value;
+  const pword = document.getElementById("pword").value;
+  const uid = document.getElementById("uid").value;
   const error = document.getElementById("password-error");
   let errorMessage = [];
   if (!pword.match(/[a-z]/)) errorMessage.push("Enter at least one lowercase letter");
@@ -173,7 +178,7 @@ if (pword.includes(uid)) errorMessage.push("Password can't contain user ID");
  //confirm password validation
  function confirmPword() {
   pword1 = document.getElementById("pword").value;
-  pword2 = document.getElementById("con_pword").value;
+  pword2 = document.getElementById("passconf").value;
 
   if (pword1 !== pword2) {
       document.getElementById("pword2-error").innerHTML = 
